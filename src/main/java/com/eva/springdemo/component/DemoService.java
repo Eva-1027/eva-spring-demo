@@ -2,6 +2,7 @@ package com.eva.springdemo.component;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
