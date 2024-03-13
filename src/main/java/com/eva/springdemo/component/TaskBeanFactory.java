@@ -3,7 +3,6 @@ package com.eva.springdemo.component;
 import com.eva.springdemo.bo.Task;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.stereotype.Component;
-
 @Component
 //是一个接口，用于生成bean。
 public class TaskBeanFactory implements FactoryBean<Task> {

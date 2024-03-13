@@ -11,6 +11,7 @@ public class EvaDemoBeanPostProcessor implements BeanPostProcessor {
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         if(bean instanceof DemoService) {
             System.out.println("Bean name in after initialization: " + beanName);
+            System.out.println("Final output name is: " + ((DemoService) bean).hello());
         }
         return BeanPostProcessor.super.postProcessAfterInitialization(bean, beanName);
     }
