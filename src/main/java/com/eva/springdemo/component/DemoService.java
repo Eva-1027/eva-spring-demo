@@ -3,6 +3,7 @@ package com.eva.springdemo.component;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 @Component
