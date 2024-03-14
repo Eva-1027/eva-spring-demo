@@ -1,13 +1,18 @@
 package com.eva.springdemo.component;
 
+import com.eva.springdemo.bo.SimpleBean;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.context.annotation.Lazy;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class DemoService implements BeanNameAware, InitializingBean {
+
+    @Autowired
+    private SimpleBean simpleBean;
+
     @Override
     //In Initializing bean interface.
     public void afterPropertiesSet() throws Exception {
