@@ -1,0 +1,13 @@
+spring:
+  datasource: #数据库连接设置
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:test  # 内存模式 ，test 为自定义的数据库名
+
+  main:
+      allow-circular-references: true
+
+#例子：使用threadlocal之后一定要在finally中清除，否则线程池中线程的复用会出bug。
+server:
+  tomcat:
+    max-threads: 1
+

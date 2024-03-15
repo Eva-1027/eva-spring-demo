@@ -1,6 +1,7 @@
 package com.eva.springdemo.processor;
 
 import com.eva.springdemo.component.DemoService;
+import com.eva.springdemo.controller.DemoController;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.Configuration;

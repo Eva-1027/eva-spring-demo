@@ -1,17 +1,12 @@
 package com.eva.springdemo.component;
 
-import com.eva.springdemo.bo.SimpleBean;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class DemoService implements BeanNameAware, InitializingBean {
-
-    @Autowired
-    private SimpleBean simpleBean;
 
     @Override
     //In Initializing bean interface.
@@ -23,7 +18,7 @@ public class DemoService implements BeanNameAware, InitializingBean {
         System.out.println("No arg constructor!");
     }
 
-    DemoService(String name) {
+    public DemoService(String name) {
         System.out.println("Named arg constructor, name is : " + name);
         this.name = name;
     }

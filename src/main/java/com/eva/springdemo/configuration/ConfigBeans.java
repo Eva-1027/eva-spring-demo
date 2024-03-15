@@ -1,6 +1,8 @@
-package com.eva.springdemo.component;
+package com.eva.springdemo.configuration;
 
 import com.eva.springdemo.bo.PlainClass;
+import com.eva.springdemo.component.DemoService;
+import com.eva.springdemo.component.LazyBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
@@ -13,12 +15,16 @@ public class ConfigBeans {
     //This will override the component annotation on DemoService.class
     //BeanDefinition 的类型会从 ScannedGenericBeanDefinition 被替换成 ConfigurationClassBeanDefinition
     @Bean(initMethod = "testInitMethod")
-    @Lazy
-    //当获取时才会第一次实例化这个bean。
     public DemoService demoService(){
         PlainClass plainClass = PlainClass();
         System.out.println("Call in other function in config class: " + plainClass.toString());
         return new DemoService("kk");
+    }
+    @Bean
+    @Lazy
+    //当获取时才会第一次实例化这个bean。
+    public LazyBean lazyBean() {
+        return new LazyBean();
     }
 
     @Bean

@@ -19,3 +19,11 @@
 原因是放进二级缓存earlySingletonObjects中的bean是实例化后的bean，*而放进一级缓存singletonObjects中的bean是代理对象*（代理对象在BeanPostProcessor#postProcessAfterInitialization中返回），*两个缓存中的bean不一致*。
 
 - *总结*： 所以singletonFactories的目的才是解决有代理对象的循环依赖问题，二级缓存解决的是有循环依赖的普通bean的问题。
+- *题外话*： 昨天晚点过了一点DefaultSingletonBeanRegistry的代码，发现两个问题：
+  - 只有开启了allow-circular-dependency，spring才会帮助我们来解决循环依赖，才会开始使用三级缓存。
+  - 只有三级缓存里面能够拿到工厂方法，生成实例以后才能将结果放入二级缓存。
+
+- 准备晚点看的：spring能帮我们解决哪些类型的循环依赖？？
+- 注入的方式？
+- aop代理类生成的时机？
+- bean的几种scope？
