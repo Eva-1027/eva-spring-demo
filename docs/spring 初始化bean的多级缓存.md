@@ -27,3 +27,15 @@
 - 注入的方式？
 - aop代理类生成的时机？
 - bean的几种scope？
+
+- bean的生命周期
+context-aware
+bean post processor before
+post construct
+initializing bean 接口的after properties set
+init-method
+bean post processor after
+
+pre destroy
+disposable bean 接口的destroy
+
